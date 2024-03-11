@@ -12,4 +12,3 @@
     src: "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/{{ font }}.tar.xz"
     dest: "/usr/local/share/fonts/{{ font }}"
     remote_src: true
-    validate_certs: false
