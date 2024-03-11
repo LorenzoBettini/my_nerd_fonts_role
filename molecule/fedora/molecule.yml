@@ -4,8 +4,8 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: instance-ubuntu
-    image: ubuntu:23.10
+  - name: instance-fedora
+    image: fedora:39
     pre_build_image: true
 provisioner:
   name: ansible

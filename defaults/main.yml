@@ -1,5 +1,6 @@
 ---
 # defaults file for lorenzobettini.my_nerd_fonts_role
+xz_package: xz
 fonts_to_install:
   - JetBrainsMono
   - Meslo

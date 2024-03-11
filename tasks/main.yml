@@ -14,6 +14,11 @@
     name:
     - fontconfig
 
+- name: Override xz package name for Debian.
+  ansible.builtin.set_fact:
+    xz_package: xz-utils
+  when: ansible_os_family == 'Debian'
+
 # unzip is useful for extracting zips
 - name: Install unzip and other compression utilities
   become: true
@@ -21,7 +26,7 @@
     state: present
     name:
     - unzip
-    - xz-utils
+    - "{{ xz_package }}"
 
 - name: Download and extract fonts to fonts directory.
   include_tasks: "download-font.yml"
