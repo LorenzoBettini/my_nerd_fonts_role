@@ -25,8 +25,7 @@
 
 - name: Download and extract fonts to fonts directory.
   include_tasks: "download-font.yml"
-  loop:
-    - JetBrainsMono
+  loop: "{{ fonts_to_install }}"
   loop_control:
     loop_var: font
 

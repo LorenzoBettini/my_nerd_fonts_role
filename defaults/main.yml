@@ -1,2 +1,7 @@
 ---
 # defaults file for lorenzobettini.my_nerd_fonts_role
+fonts_to_install:
+  - JetBrainsMono
+  - Meslo
+  - FiraMono
+  - Hack

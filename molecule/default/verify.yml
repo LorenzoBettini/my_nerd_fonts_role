@@ -14,4 +14,10 @@
 
   - name: Assert JetBrainsMono is installed
     ansible.builtin.assert:
-      that: "'JetBrainsMono Nerd' in font_list.stdout"
+      that:
+      - item in font_list.stdout
+    loop:
+      - JetBrainsMono Nerd
+      - FiraMono Nerd
+      - Hack Nerd
+      - MesloLGM Nerd
