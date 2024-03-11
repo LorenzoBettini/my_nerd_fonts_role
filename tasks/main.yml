@@ -23,13 +23,6 @@
     - unzip
     - xz-utils
 
-- name: Create local fonts directory
-  become: true
-  ansible.builtin.file:
-    path: '/usr/local/share/fonts'
-    mode: 0775
-    state: directory
-
 - name: Download and extract fonts to fonts directory.
   include_tasks: "download-font.yml"
   loop:

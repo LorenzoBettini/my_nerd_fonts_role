@@ -1,7 +1,14 @@
 ---
+- name: Create directory for {{ font }}
+  become: true
+  ansible.builtin.file:
+    path: '/usr/local/share/fonts/{{ font }}'
+    mode: 0775
+    state: directory
+
 - name: Download {{ font }}
   become: true
   ansible.builtin.unarchive:
     src: "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/{{ font }}.tar.xz"
-    dest: /usr/local/share/fonts
+    dest: "/usr/local/share/fonts/{{ font }}"
     remote_src: true
