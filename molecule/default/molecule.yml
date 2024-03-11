@@ -4,8 +4,8 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: instance
-    image: quay.io/centos/centos:stream8
+  - name: instance-ubuntu
+    image: ubuntu:23.10
     pre_build_image: true
 provisioner:
   name: ansible
