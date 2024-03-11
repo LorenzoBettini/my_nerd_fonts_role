@@ -1,0 +1,7 @@
+---
+- name: Download {{ font }}
+  become: true
+  ansible.builtin.unarchive:
+    src: "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/{{ font }}.tar.xz"
+    dest: /usr/local/share/fonts
+    remote_src: true

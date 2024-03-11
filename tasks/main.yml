@@ -1,2 +1,38 @@
 ---
 # tasks file for lorenzobettini.my_nerd_fonts_role
+- name: Ensure ca-certificates is present
+  become: true
+  ansible.builtin.package:
+    state: present
+    name:
+    - ca-certificates
+
+- name: Ensure fc-cache is present
+  become: true
+  ansible.builtin.package:
+    state: present
+    name:
+    - fontconfig
+
+# unzip is useful for extracting zips
+- name: Install unzip and other compression utilities
+  become: true
+  ansible.builtin.package:
+    state: present
+    name:
+    - unzip
+    - xz-utils
+
+- name: Create local fonts directory
+  become: true
+  ansible.builtin.file:
+    path: '/usr/local/share/fonts'
+    mode: 0775
+    state: directory
+
+- name: Download and extract fonts to fonts directory.
+  include_tasks: "download-font.yml"
+  loop:
+    - JetBrainsMono
+  loop_control:
+    loop_var: font
