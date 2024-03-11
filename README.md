@@ -30,9 +30,10 @@ Including an example of how to use your role (for instance, with variables passe
 License
 -------
 
-BSD
+MIT
 
-Author Information
+Fonts Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+The LG in Meslo LG stands for Line Gap. The idea behind it is to allow the user to have some control over vertical spacing by choosing one of three line gap variants: small, medium and large (Meslo LG S, Meslo LG M, and Meslo LG L respectively).
+There is also a DZ version of each of these fonts (Meslo LG S DZ, Meslo LG M DZ, and Meslo LG L DZ), which replaces the slash version of the zero character with one with a center dot.
