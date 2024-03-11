@@ -1,3 +1,2 @@
-- fc-cache
 - verify
-- fc-list
+- fc-list : family spacing | sort | uniq

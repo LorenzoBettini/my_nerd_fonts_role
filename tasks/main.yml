@@ -29,3 +29,7 @@
     - JetBrainsMono
   loop_control:
     loop_var: font
+
+- name: Update font cache
+  ansible.builtin.shell: fc-cache -f
+  changed_when: false
