@@ -3,8 +3,15 @@
 
 - name: Verify
   hosts: all
-  gather_facts: false
+  gather_facts: true
   tasks:
-  - name: Example assertion
+  - name: List fonts
+    ansible.builtin.shell: "fc-list : family spacing"
+    register: font_list
+    args:
+      executable: /bin/bash
+    changed_when: false
+
+  - name: Assert JetBrainsMono is installed
     ansible.builtin.assert:
-      that: true
+      that: "'JetBrainsMono Nerd' in font_list.stdout"
