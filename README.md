@@ -1,31 +1,38 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+My Ansible role for installing some Nerd Fonts in Ubuntu and Fedora.
 
-Requirements
-------------
-
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+DISCLAIMER: this role is built to fit my needs and configurations, and it is not meant to be reusable.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+See `default/main.yml`, e.g.,
 
-Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+```yaml
+xz_package: xz
+fonts_to_install:
+  - JetBrainsMono
+  - Meslo
+  - FiraMono
+  - Hack
+```
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+```yaml
+    - name: Install Nerd Fonts
+      ansible.builtin.include_role:
+        name: lorenzobettini.my_nerd_fonts_role
+```
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+To run the playbook on this system:
+
+```
+ansible-playbook tests/test.yml -i tests/inventory -K
+```
 
 License
 -------
