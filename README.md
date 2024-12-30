@@ -17,6 +17,7 @@ fonts_to_install:
   - Meslo
   - FiraMono
   - Hack
+  - CascadiaMono
 ```
 
 Example Playbook
