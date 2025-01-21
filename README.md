@@ -8,7 +8,7 @@ DISCLAIMER: this role is built to fit my needs and configurations, and it is not
 Role Variables
 --------------
 
-See `default/main.yml`, e.g.,
+See `vars/main.yml`, e.g.,
 
 ```yaml
 xz_package: xz
